@@ -1,4 +1,4 @@
-<select wire:model.live='mileage'class="block py-0.5 text-sm px-1 rounded-md bg-white shadow-sm border border-gray-400 w-10/12 mt-1" >
+<select id="carmileage" wire:model.live='mileage'class="block py-0.5 text-sm px-1 rounded-md bg-white shadow-sm border border-gray-400 w-{{$width}}" >
     <option value="any">Any mileage</option>
     <option value="5000">5000</option>
     <option value="10000">10,000</option>

@@ -49,10 +49,26 @@
                             </select>
                         </label>
                     </div>
-                    <div class="grid grid-cols-5 w-full">
+                    <div class="grid grid-cols-5 w-full gap-2 py-4">
                         <div>
-                            <label for="makeselect" class="block">Car make</label>
-                            <x-filters.carmake :carmake="$carmake" />
+                            <label for="carmake">Car Make</label>
+                            <x-searchcomponents.forms.carmake :carbrand="$carbrand" :brands="$carmake" width="full" />
+                        </div>
+                        <div>
+                            <label for="carmodel">Car Model</label>
+                            <x-searchcomponents.forms.carmodel  :allmodels="$allcarmodel" :carmodel="$carmodel" width="full" />
+                        </div>
+                        <div>
+                            <label for="carbody">Body type</label>
+                            <x-searchcomponents.forms.bodytype :bodylist="$bodystyle" :carbody="$carbody" width="full" />
+                        </div>
+                        <div>
+                            <label for="caryear">Year after</label>
+                            <x-searchcomponents.forms.year :year="$year" width="full" />
+                        </div>
+                        <div>
+                            <label for="carmileage">Year after</label>
+                            <x-searchcomponents.forms.mileage :mileage="$mileage" width="full" />
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-4 py-2">

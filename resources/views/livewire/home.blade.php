@@ -18,7 +18,7 @@
                         </div>
                         <div class=" grid grid-cols-3 gap-2">
                             <div class="">
-                                <x-formcomponents.year :selecyear="$selecyear" />
+                                <x-formcomponents.year :selecyear="$selecyear" :py="2" />
                             </div>
                             <div class="">
                                 <x-formcomponents.price :selecprice="$selecprice" />
@@ -33,7 +33,7 @@
                             <p wire:click='showfilters()' wire:loading.remove wire:target='showmorefilter' class="{{$showmorefilter==true ? 'hidden' : 'block'}} me-auto ms-0 text-blue-700 font-semibold py-2 cursor-pointer text-xl">More filters</p>
                             <div class="{{$showmorefilter==true ? 'block' : 'hidden'}} w-full grid grid-cols-2 md:grid-cols-4 gap-2 pt-3">
                                 <div class="w-full">
-                                    <x-formcomponents.body :selectedbodystyle="$selectedbodystyle" :bodystyle="$bodystyle" />
+                                    <x-formcomponents.body :selectedbodystyle="$selectedbodystyle" :bodystyle="$bodystyle" :py="2" />
                                 </div>
                                 <div class="w-full">
                                     <x-formcomponents.transmission :selectedtransmission="$selectedtransmission" :transmissiontype="$transmissiontype" />

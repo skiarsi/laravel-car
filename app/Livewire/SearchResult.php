@@ -84,7 +84,7 @@ class SearchResult extends Component
             return Drivetype::select(['id','drivetype_title','drivetype_slug'])->get();
         });
 
-        $this->enginelist = Cache::remember('drive', 1440, function(){
+        $this->enginelist = Cache::remember('engin', 1440, function(){
             return Engine::select(['engine_title','engine_slug'])->get();
         });
 

@@ -45,7 +45,6 @@ class Home extends Component
     public function updatemodel() {
         $this->selectedmodel = 'any';
         $this->models = Carmodel::select(['name','slug'])->where('make_slug',$this->selectedmake)->get();
-        
     }
 
     

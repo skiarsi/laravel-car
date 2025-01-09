@@ -29,7 +29,10 @@
                 
                 
             @else
-                <a href="{{route('login')}}" wire:navigate class="text-white py-2" >Login<span class="hidden md:inline-block">&nbsp;/&nbsp;register</span></a>
+                <p class="flex flex-row text-white select-none py-2">
+                    <a href="{{route('login')}}" wire:navigate class="text-white" >Login</a>&nbsp;/&nbsp;
+                    <a href="{{route('register')}}" wire:navigate class="text-white" >Register</a>
+                </p>
             @endif
         </div>
     </div>

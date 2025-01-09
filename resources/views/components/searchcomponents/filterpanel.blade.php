@@ -10,10 +10,10 @@
     <span wire:click='clearfilters' class="ms-auto me-0 cursor-pointer text-blue-800 text-sm pt-1.5 font-bold select-none">Clear all filters</span>
   </div>
   <hr class="my-3">
-  <div class="w-full flex flex-col">
+  <div class="w-full flex flex-col gap-1">
     <p class="font-bold">Make & Model</p>
-    <x-searchcomponents.forms.carmake :carbrand="$carbrand" :brands="$brands" />
-    <x-searchcomponents.forms.carmodel :carmodel="$carmodel" :allmodels="$allmodels" />
+    <x-searchcomponents.forms.carmake :carbrand="$carbrand" :brands="$brands" width="10/12" />
+    <x-searchcomponents.forms.carmodel :carmodel="$carmodel" :allmodels="$allmodels" width="10/12" />
   </div>
   <hr class="my-3 ">
   <div class="w-full flex flex-col">
@@ -32,13 +32,13 @@
   <hr class="my-3 ">
   <div class="w-full flex flex-col">
     <p class="font-bold">Year</p>
-    <x-searchcomponents.forms.year :year="$year" />
+    <x-searchcomponents.forms.year :year="$year" width="10/12" />
     
     <p class="font-bold mt-1">Mileage</p>
-    <x-searchcomponents.forms.mileage :mileage="$mileage" />
+    <x-searchcomponents.forms.mileage :mileage="$mileage" width="10/12" />
 
     <p class="font-bold mt-1">Body type</p>
-    <x-searchcomponents.forms.bodytype :bodylist="$bodylist" :carbody="$carbody" />
+    <x-searchcomponents.forms.bodytype :bodylist="$bodylist" :carbody="$carbody" width="10/12" />
 
     <p class="font-bold mt-1">Transmission</p>
     <x-searchcomponents.forms.transmission :translist="$translist" :transmission="$transmission" />

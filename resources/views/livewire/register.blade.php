@@ -40,15 +40,15 @@
                     <span class="text-red-600 text-sm my-0">{{ $message }}</span>
                 @enderror
             
-                <button type="submit" class="bg-blue-700 text-white py-2 px-11 mt-3">Login</button>
+                <button type="submit" class="bg-blue-700 text-white py-2 px-11 mt-3">Register</button>
                 <p class="w-full mt-3">Do you have account?  <a wire:navigate class="text-blue-700 font-bold" href="{{route('login')}}"> Login</a></p>
                 <div class="w-full flex flex-col mt-2 justify-center items-center">
                     <hr class="border-gray-600 w-full m-0">
                     <span class="bg-white -mt-3 px-5">OR</span>
                 </div>
-                <a href="#" class="w-full relative py-3 border rounded-md border-gray-500 h-12 px-3 flex flex-row gap-3">
+                <a href="{{route('google.redirect')}}" class="w-full relative py-3 border rounded-md border-gray-500 h-12 px-3 flex flex-row gap-3">
                     <img class="h-full select-none" src="{{ asset("storage/images/google.png")}}" alt="">
-                    <p class="font-bold -mt-0.5  text-gray-700 select-none">Loging with google</p>
+                    <p class="font-bold -mt-0.5  text-gray-700 select-none">Continue with google</p>
                 </a>
             </div>
         </form> 
