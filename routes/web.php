@@ -10,6 +10,7 @@ use App\Livewire\Home;
 use App\Livewire\Login;
 use App\Livewire\Register;
 use App\Livewire\SearchResult;
+use App\Livewire\Settings;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',Home::class)->name('home');
@@ -35,7 +36,11 @@ Route::prefix('dealer')->group(function () {
   Route::get('/{dealer_slug}',Dealers::class)->name('dealers.home');
 });
 
-Route::prefix('auth')->group(function(){
+Route::prefix('auth')->middleware('auth')->group(function(){
   Route::get('/logout',[AuthController::class,'logout'])->name('logout');
   Route::get('/activation/{token}',[AuthController::class,'activation'])->name('actication');
+});
+
+Route::prefix('setting')->middleware('auth')->group(function(){
+  Route::get('/',Settings::class)->name('setting.main');
 });
