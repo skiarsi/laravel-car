@@ -40,7 +40,7 @@
                     <span class="text-red-600 text-sm my-0">{{ $message }}</span>
                 @enderror
             
-                <button type="submit" class="bg-blue-700 text-white py-2 px-11 mt-3">Register</button>
+                <button type="submit" wire:loading.class='disabled' class="disabled:bg-gray-400 disabled:text-gray-100 bg-blue-700 text-white py-2 px-11 mt-3">Register</button>
                 <p class="w-full mt-3">Do you have account?  <a wire:navigate class="text-blue-700 font-bold" href="{{route('login')}}"> Login</a></p>
                 <div class="w-full flex flex-col mt-2 justify-center items-center">
                     <hr class="border-gray-600 w-full m-0">

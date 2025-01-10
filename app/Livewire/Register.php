@@ -2,9 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Mail\Registeruser;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -28,20 +30,32 @@ class Register extends Component
         ]);
 
 
-        User::create([
+        
+
+
+        $user = User::create([
             'name'  => $this->name,
             'email' => $this->email,
-            'password' => Hash::make($this->password)
+            'password' => Hash::make($this->password),
+            'activation_token' => Str::random(60),
+            'is_active' => false,
         ]);
 
-        $credentials = [
-            'email' => $this->email,
-            'password'  => $this->password
-        ];
 
-        Auth::attempt($credentials);
+        // send an email to user
+        Mail::to($user->email)->send(new Registeruser($user));
 
-        return $this->redirectRoute('home',navigate:true);
+
+        // $credentials = [
+        //     'email' => $this->email,
+        //     'password'  => $this->password
+        // ];
+
+        // Auth::attempt($credentials);
+
+        session()->flash('registerSuccess', 'Please check your email to activate your account');
+        
+        return $this->redirectRoute('login',navigate:true);
     }
 
 

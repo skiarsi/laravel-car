@@ -1,4 +1,4 @@
-<div class="bg-blue-600 w-full py-1 px-2 flex flex-row">
+<div class=" w-full py-1 px-2 flex flex-row">
     <div class="w-full flex flex-row mx-auto max-w-[1224px]">
         <div class="ms-0 me-auto flex">
             <a href="/" wire:navigate class="py-2 px-6 text-white">Home</a>

@@ -19,12 +19,21 @@ class Login extends Component
         ]);
 
 
+
         if(Auth::attempt($validated)){
-            return redirect()->to(route('home'),true);
+            $user = Auth::user();
+            if($user->is_active){
+                return redirect()->to(route('home'),true);
+            }else{
+                Auth::logout();
+                $this->addError('email','Your account is not active. Please check your email for activation.');
+            }
         }else{
             $this->password='';
             $this->addError('email','Invalid email and/or password');
         }
+
+        $this->password= "";
         
     }
 

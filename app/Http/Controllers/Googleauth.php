@@ -22,7 +22,8 @@ class Googleauth extends Controller
                     [
                         'name' => $googleUser->name,
                         'email' => $googleUser->email,
-                        'password' => null
+                        'password' => null,
+                        'is_active' => true
                     ]
             );
         }

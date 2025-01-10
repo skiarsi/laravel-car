@@ -37,4 +37,5 @@ Route::prefix('dealer')->group(function () {
 
 Route::prefix('auth')->group(function(){
   Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+  Route::get('/activation/{token}',[AuthController::class,'activation'])->name('actication');
 });
