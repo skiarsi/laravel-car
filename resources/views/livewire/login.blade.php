@@ -1,4 +1,4 @@
-<div class="w-full h-full">
+<div class="w-full min-h-screen">
     <div class="flex flex-col relative">
         <div class="bg-blue-600 w-full">
             <x-header />

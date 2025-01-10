@@ -32,7 +32,6 @@ class Register extends Component
 
         
 
-
         $user = User::create([
             'name'  => $this->name,
             'email' => $this->email,
@@ -43,18 +42,11 @@ class Register extends Component
 
 
         // send an email to user
-        Mail::to($user->email)->send(new Registeruser($user));
+        Mail::to($user->email)->queue(new Registeruser($user));
 
-
-        // $credentials = [
-        //     'email' => $this->email,
-        //     'password'  => $this->password
-        // ];
-
-        // Auth::attempt($credentials);
 
         session()->flash('registerSuccess', 'Please check your email to activate your account');
-        
+
         return $this->redirectRoute('login',navigate:true);
     }
 

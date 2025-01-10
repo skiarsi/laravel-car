@@ -28,8 +28,12 @@ Route::prefix('auth')->middleware('guest')->group(function () {
     Route::get('/register',Register::class)->name('register');
     Route::get('/forgot-password',Forgotpassword::class)->name('forgot.password');
 
+    // google auth using sociality
     Route::get('/google/redirect',[Googleauth::class,'redirect'])->name('google.redirect');
     Route::get('/google/callback',[Googleauth::class,'callback'])->name('google.callback');
+
+    // active registred user
+    Route::get('/activation/{token}',[AuthController::class,'activation'])->name('actication');
 });
 
 Route::prefix('dealer')->group(function () {
@@ -38,7 +42,6 @@ Route::prefix('dealer')->group(function () {
 
 Route::prefix('auth')->middleware('auth')->group(function(){
   Route::get('/logout',[AuthController::class,'logout'])->name('logout');
-  Route::get('/activation/{token}',[AuthController::class,'activation'])->name('actication');
 });
 
 Route::prefix('setting')->middleware('auth')->group(function(){
